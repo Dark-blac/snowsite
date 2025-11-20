@@ -1,5 +1,6 @@
 import { Check } from 'lucide-react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { useEffect, useState } from 'react';
 
 const lessons = [
   {
@@ -52,6 +53,14 @@ const lessons = [
 
 export default function Lessons() {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <section id="lessons" className="py-20 bg-slate-50 relative overflow-hidden">
@@ -59,7 +68,9 @@ export default function Lessons() {
         <div
           className="w-full h-full bg-cover bg-center"
           style={{
-            backgroundImage: "linear-gradient(rgba(2,6,23,0.45), rgba(2,6,23,0.45)), url(/images/bg_fog.jpg)",
+            backgroundImage: `linear-gradient(rgba(2,6,23,0.45), rgba(2,6,23,0.45)), url(/images/${
+              isMobile ? 'lift_view2.jpg' : 'bg_fog.jpg'
+            })`,
           }}
         />
       </div>
