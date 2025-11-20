@@ -8,8 +8,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
 
     steps:
       - name: Checkout code
@@ -29,6 +27,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           publish_dir: ./dist
           cname: peakriding.com
