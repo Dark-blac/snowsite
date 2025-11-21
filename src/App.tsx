@@ -62,7 +62,7 @@ function App() {
             <Mountain className="w-6 h-6" />
             <span className="font-bold text-lg">Steinherz Snow</span>
           </div>
-          <p className="text-slate-400">Ride the mountain, master the snow</p>
+          <p className="text-slate-400">Master the mountain</p>
         </div>
       </footer>
     </div>

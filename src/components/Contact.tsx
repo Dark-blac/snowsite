@@ -151,6 +151,18 @@ export default function Contact() {
                     <div>
                       <p className="font-semibold text-slate-900">Location</p>
                       <p className="text-slate-600">Gudauri Resort, Georgia</p>
+                      <div>
+                      <p className="text-slate-600">
+                        <a
+                          href="https://www.youtube.com/watch?v=QhA-Gw16wbw"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:underline text-blue-600"
+                        >
+                          Live resort camera
+                        </a>
+                      </p>
+                    </div>
                     </div>
                   </div>
                 </div>
