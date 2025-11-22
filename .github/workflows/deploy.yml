@@ -29,5 +29,5 @@ jobs:
         with:
           personal_token: ${{ secrets.GH_PAT }}
           publish_dir: ./dist
-          publish_branch: master
+          publish_branch: gh-pages
           cname: www.steinherz.net
